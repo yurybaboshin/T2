@@ -26,7 +26,8 @@ public class dbConnection {
 //		con = ds.getConnection(); // con - это connection к базе
 		
 
-		String connectionString = "jdbc:sqlserver://VITA:14333;" + 
+//		String connectionString = "jdbc:sqlserver://VITA:14333;" +
+		String connectionString = "jdbc:sqlserver://VITA:1433;" + 
 		        "database=Roll;" + 
 				"user=buser;" +
 				"password=32767;" + 
