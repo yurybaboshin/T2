@@ -12,7 +12,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.jface.viewers.ListViewer;
-import org.eclipse.wb.swt.SWTResourceManager;
 
 public class AskUser2 extends Dialog {
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
@@ -43,31 +42,15 @@ public class AskUser2 extends Dialog {
 		
 		ListViewer listViewer = new ListViewer(scrolledComposite, SWT.BORDER | SWT.V_SCROLL);
 		List list = listViewer.getList();
-		list.setFont(SWTResourceManager.getFont("Tahoma", 10, SWT.NORMAL));
-		list.add("ќй");
-		list.add("јй");		
-		list.add("јй1");		
-		list.add("јй2");		
-		list.add("јй3");		
-		list.add("јй4");		
-		list.add("јй5");		
-		list.add("јй6");		
-		list.add("јй7");		
-		list.add("јй8");		
-		list.add("јй9");		
-		list.add("јй10");		
-		list.add("јй11");		
-		list.add("јй12");		
-		list.add("јй13");		
-		list.add("јй14");		
-		list.add("јй15");		
-		list.add("јй16");		
-		list.add("јй17");		
-		list.add("јй18");		
-		list.add("јй19");		
-		scrolledComposite.setMinSize(new Point(0, 0));
 		scrolledComposite.setContent(list);
+		scrolledComposite.setMinSize(list.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		scrolledComposite.setMinSize(new Point(0, 0));
 
+		listViewer.setContentProvider(new UsersCP());
+		listViewer.setLabelProvider(new UsersLP());
+		
+		String t[] = {"4","5"}; // Ќе знаю, зачем это, но без него никак		
+		listViewer.setInput(t);
 		
 		this.getShell().setText("¬ыбор пользовател€");
 				
