@@ -12,6 +12,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.wb.swt.SWTResourceManager;
 
 public class AskUser2 extends Dialog {
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
@@ -42,14 +43,13 @@ public class AskUser2 extends Dialog {
 		
 		ListViewer listViewer = new ListViewer(scrolledComposite, SWT.BORDER | SWT.V_SCROLL);
 		List list = listViewer.getList();
+		list.setFont(SWTResourceManager.getFont("MS Sans Serif", 10, SWT.BOLD));
 		scrolledComposite.setContent(list);
-		scrolledComposite.setMinSize(list.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		scrolledComposite.setMinSize(new Point(0, 0));
 
 		listViewer.setContentProvider(new UsersCP());
 		listViewer.setLabelProvider(new UsersLP());
 		
-		String t[] = {"4","5"}; // Не знаю, зачем это, но без него никак		
+		String t[] = {"1"}; // Не знаю, зачем это, но без него никак		
 		listViewer.setInput(t);
 		
 		this.getShell().setText("Выбор пользователя");
