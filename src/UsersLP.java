@@ -1,3 +1,8 @@
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
@@ -37,12 +42,15 @@ public class UsersLP implements ILabelProvider {
 	@Override
 	public Image getImage(Object element) {
 		// TODO Auto-generated method stub
-		return null;
+		//return getImage(new File("src/Res/if_folder_416376.png"));
+	//	return (new javax.swing.ImageIcon(getClass().getResource("/org/me/myimageapp/newpackage/image.png")));
+	    Image picture =
+        pictureBox1.Image = (Image)resources.GetObject("img1.png"); 		
 	}
 
 	@Override
 	public String getText(Object element) {
-		return element.toString();		
+		return element.toString();
 	}
 
 }
